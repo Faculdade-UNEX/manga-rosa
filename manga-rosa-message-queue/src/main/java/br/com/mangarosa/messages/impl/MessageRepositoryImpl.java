@@ -11,9 +11,6 @@ public class MessageRepositoryImpl implements MessageRepository {
     @Override
     public void append(String topic, Message message) {
         topicMap.computeIfAbsent(topic, k -> new LinkedList<>()).add(message);
-
-       //Atribui um ID único à mensagem
-        // message.setId(UUID.randomUUID().toString());
     }
 
     @Override

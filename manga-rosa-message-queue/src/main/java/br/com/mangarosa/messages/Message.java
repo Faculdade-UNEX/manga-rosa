@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * Messagem para ser processada
  */
-public class Message implements Serializable,  Comparable<Message> {
+public class Message implements Serializable, Comparable<Message> {
 
     private String id;
     private Producer producer;
@@ -126,7 +126,7 @@ public class Message implements Serializable,  Comparable<Message> {
 
     public boolean isExpired() {
         Duration duration = Duration.between(createdAt, LocalDateTime.now());
-        return duration.toMinutes() >= 5;
+        return duration.toSeconds() >= 5;
     }
 
     @Override
